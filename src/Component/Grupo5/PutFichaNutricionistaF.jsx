@@ -316,9 +316,12 @@ export default function NutricionistaF() {
 
                         <Grid item xs={12}>
                             <FormControlLabel
-                                control={
+                                disabled control={
                                     <Checkbox
-                                        name="checkPatologia"
+                                    
+                                        checked name="checkedE"
+                                                                                
+                                        
                                         color="primary"
                                         
                                     />

@@ -99,8 +99,8 @@ useEffect(() => {
                         return(
                             <TableRow key={index}>
                                 <TableCell >{elemento.rut}</TableCell>
-                                <TableCell>{elemento.peso}</TableCell>
-                                <TableCell>{elemento.pesoIdeal}</TableCell>
+                                <TableCell>{elemento.ocupacion}</TableCell>
+                                <TableCell>{elemento.escolaridad}</TableCell>
                                 <TableCell style={{textAlign: "center"}}> 
                                         <Button variant="contained" color="primary" onClick={e => redirectPutFichaPsicologo(elemento._id)}> Ver </Button>
                                         <Button variant="contained"color="secondary" onClick={e => borrarElemento(elemento._id)} className={classes.button} startIcon={<DeleteIcon />}>Eliminar</Button>

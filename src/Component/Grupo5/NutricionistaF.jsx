@@ -313,9 +313,9 @@ export default function NutricionistaF() {
                             <FormControlLabel
                                 control={
                                     <Checkbox
+                                        value={true} onChange={(e) => { setPatologia(e.target.value) }}
                                         name="checkPatologia"
                                         color="primary"
-                                        value={patologia}
                                         onChange={(e) => { setPatologia(e.target.value) }}
                                     />
                                 }
