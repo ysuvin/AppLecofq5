@@ -124,6 +124,7 @@ export default function NutricionistaF() {
     const[otrasPatologias,setOtrasPatologias] = React.useState('');
     const[tiemposComida,setTiemposComida] = React.useState('');
     const[alimentosPorciones,setAlimentosPorciones] = React.useState('');
+
     const [banderaAlerta, setBanderaAlerta] = useState(false);
     const [banderaAlertaOpcion, setBanderaAlertaOpcion] = useState(false);
 
