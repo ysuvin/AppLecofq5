@@ -62,32 +62,32 @@ export default function NutricionistaF() {
         setOpen(false);
     };
 
-    const [cont, setCont] = useState(1);
-    const [matriz, setMatriz] = useState([])
+    // const [cont, setCont] = useState(1);
+    // const [matriz, setMatriz] = useState([])
 
-    useEffect(() => {
-        iterar()
-    }, [cont])
+    // useEffect(() => {
+    //     iterar()
+    // }, [cont])
 
-    const iterar = () => {
-        var matriztemp = [];
-        for (let index = 0; index < cont; index++) {
-            matriztemp.push(
-                <TableRow>
-                    <TableCell>
-                        <TextField id="tiempComida" variant="outlined" fullWidth></TextField>
-                    </TableCell >
-                    <TableCell >
-                        <TextField id="comida" variant="outlined" fullWidth></TextField>
-                    </TableCell>
-                    <TableCell>
-                        {/* <Button>+</Button> */}
-                    </TableCell>
-                </TableRow>
-            )
-        }
-        setMatriz(matriztemp)
-    }
+    // const iterar = () => {
+    //     var matriztemp = [];
+    //     for (let index = 0; index < cont; index++) {
+    //         matriztemp.push(
+    //             <TableRow>
+    //                 <TableCell>
+    //                     <TextField id="tiempComida" variant="outlined" fullWidth></TextField>
+    //                 </TableCell >
+    //                 <TableCell >
+    //                     <TextField id="comida" variant="outlined" fullWidth></TextField>
+    //                 </TableCell>
+    //                 <TableCell>
+    //                     {/* <Button>+</Button> */}
+    //                 </TableCell>
+    //             </TableRow>
+    //         )
+    //     }
+    //     setMatriz(matriztemp)
+    // }
 
 
 
@@ -122,6 +122,8 @@ export default function NutricionistaF() {
     const[cancer,setCancer] = React.useState(false);
     const[hta,setHta] = React.useState(false);
     const[otrasPatologias,setOtrasPatologias] = React.useState('');
+    const[tiemposComida,setTiemposComida] = React.useState('');
+    const[alimentosPorciones,setAlimentosPorciones] = React.useState('');
     
 
     const Listo = () => {
@@ -161,7 +163,9 @@ export default function NutricionistaF() {
             pisc: pisc,
             grasa: grasa,
             gmb: gmb,
-            pesoIdeal: pesoIdeal
+            pesoIdeal: pesoIdeal,
+            tiemposComida: tiemposComida,
+            alimentosPorciones: alimentosPorciones
         }
         Axios.post(`http://localhost:8080/fichaNutricionista/`, data)
     }
@@ -542,9 +546,39 @@ export default function NutricionistaF() {
                             Anamnesis alimentaria: Recordatorio 24 Hrs
                     </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={3} md={3}>
+                            <TextField
+                                id="tiempcomida"
+                                label="Tiempos de Comida"
+                                fullWidth
+                                autoComplete="tiempo-comida"
+                                multiline
+                                rows={15}
+                                value={tiemposComida}
+                                onChange={(e) => { setTiemposComida(e.target.value) }}
+                            />
+                        </Grid>
+                        <Grid item xs={9} md={9}>
+                            <TextField
+                                id="alimPorc"
+                                label="Alimentos y Porciiones"
+                                fullWidth
+                                autoComplete="alimentos-porciones"
+                                multiline
+                                rows={15}
+                                value={alimentosPorciones}
+                                onChange={(e) => { setAlimentosPorciones(e.target.value) }}
+                            />
+                        </Grid>
 
-                        <Table className={classes.table} aria-label="simple table">
+
+
+
+
+
+
+                        {/* <Table className={classes.table} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell className={classes.tablecell} size="small" >Tiempos de Comida</TableCell>
@@ -559,9 +593,7 @@ export default function NutricionistaF() {
                                 <Button variant="contained" color="secondary" onClick={e => { setCont(cont - 1) }}>Quitar Comida</Button>
 
                             </TableBody>
-                        </Table>
-
-
+                        </Table> */}
                     </Grid>
                     <Grid item xs={12} md={6} alignContent="flex-end" className={classes.root}>
                         <Button variant="outlined" color="primary" href="#contained-buttons" startIcon={<CheckIcon />} onClick={e => { goLogin(); Listo() }} >
