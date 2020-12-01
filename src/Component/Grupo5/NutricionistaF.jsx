@@ -124,7 +124,9 @@ export default function NutricionistaF() {
     const[otrasPatologias,setOtrasPatologias] = React.useState('');
     const[tiemposComida,setTiemposComida] = React.useState('');
     const[alimentosPorciones,setAlimentosPorciones] = React.useState('');
-    
+
+    const [banderaAlerta, setBanderaAlerta] = useState(false);
+    const [banderaAlertaOpcion, setBanderaAlertaOpcion] = useState(false);
 
     const Listo = () => {
         Axios.get(`http://localhost:8080/fichaNutricionista/`)
@@ -168,6 +170,23 @@ export default function NutricionistaF() {
             alimentosPorciones: alimentosPorciones
         }
         Axios.post(`http://localhost:8080/fichaNutricionista/`, data)
+        .then((response) => {
+        if (response.data.state) {
+            setOpen(true);
+            setBanderaAlerta(true);
+            setBanderaAlertaOpcion(true)
+        }else{
+            setOpen(true);
+            setBanderaAlerta(true);
+            setBanderaAlertaOpcion(false)
+        }
+        console.log(response)
+    
+    }).finally(() => { console.log("termina") }).catch((e) => { console.log(e);
+        setOpen(true);
+        setBanderaAlerta(true);
+        setBanderaAlertaOpcion(false)
+    });
     }
 
 
@@ -599,11 +618,25 @@ export default function NutricionistaF() {
                         <Button variant="outlined" color="primary" href="#contained-buttons" startIcon={<CheckIcon />} onClick={e => { goLogin(); Listo() }} >
                             Finalizar
                         </Button>
-                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                            <Alert onClose={handleClose} severity="success">
-                                La ficha se ha creado con exito!
-                        </Alert>
-                        </Snackbar>
+                        {     
+                            banderaAlerta &&
+                            <div>
+                                {
+                                    banderaAlertaOpcion ?
+                                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                            <Alert onClose={handleClose} severity="success">
+                                                La ficha se ha creado con exito!
+                            </Alert>
+                                        </Snackbar>
+                                        :
+                                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                                            <Alert onClose={handleClose} severity="error">
+                                                Los datos no se han subido correctamente!
+                            </Alert>
+                                            </Snackbar>
+                                    }
+                                </div>
+                            }
                     </Grid>
                 </Grid>
             </React.Fragment>

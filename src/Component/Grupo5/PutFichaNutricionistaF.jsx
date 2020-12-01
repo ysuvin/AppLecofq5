@@ -615,9 +615,6 @@ export default function NutricionistaF() {
 
 
 
-
-
-
                         {/* <Table className={classes.table} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
