@@ -172,7 +172,111 @@ export default function PsicologoF() {
     const [sintomas, setSintomas] = React.useState('');
     const [miedosDesproporcionados, setMiedosDesproporcionados] = React.useState('');
     const [otrosMiedos, setOtrosMiedos] = React.useState('');
-    const [banderaAlerta, setBanderaAlerta] = useState(false);
+    const [andar, setAndar] = React.useState(false);
+    const [hablar, setHablar] = React.useState(false);
+    const [leerYEscribir, setLeerYEscribir] = React.useState(false);
+    const [controlarEsfinter, setControlarEsfinter] = React.useState(false);
+    const [conductual, setConductual] = React.useState(false);
+    const [otros, setOtros] = React.useState(false);
+    const [muySatisfecho, setMuySatisfecho] = React.useState(false);
+    const [satisfecho, setSatisfecho] = React.useState(false);
+    const [relativamenteSatisfecho, setRelativamenteSatisfecho] = React.useState(false);
+    const [insatisfecho, setInsatisfecho] = React.useState(false);
+    const [muyInsatisfecho, setMuyInsatisfecho] = React.useState(false);
+    const [sociable, setSociable] = React.useState(false);
+    const [relativamenteSociable, setRelativamenteSociable] = React.useState(false);
+    const [pocoSociable, setPocoSociable] = React.useState(false);
+    const [plenamenteSatisfecho, setPlenamenteSatisfecho] = React.useState(false);
+    const [satisfecho2, setSatisfecho2] = React.useState(false);
+    const [relativamenteSatisfecho2, setRelativamenteSatisfecho2] = React.useState(false);
+    const [insatisfecho2, setInsatisfecho2] = React.useState(false);
+    const [muyInsatisfecho2, setMuyInsatisfecho2] = React.useState(false);
+    const [muyEstable, setMuyEstable] = React.useState(false);
+    const [relativamenteEstable, setRelativamenteEstable] = React.useState(false);
+    const [variaEnFuncionDeLasExperencias, setVariaEnFuncionDeLasExperiencias] = React.useState(false);
+    const [cesantia, setCesantia] = React.useState(false);
+    const [separacionMatrimonial, setSeparacionMatrimonial] = React.useState(false);
+    const [despidoLaboral, setDespidoLaboral] = React.useState(false);
+    const [muerteDeUnFamiliarCercano, setMuerteDeUnFamiliarCercano] = React.useState(false);
+    const [enfermedad, setEnfermedad] = React.useState(false);
+    const [fuertesProblemasEconomicos, setFuertesProblemasEconomicos] = React.useState(false);
+    const [accidente, setAccidente] = React.useState(false);
+    const [fracasoAcademico, setFracasoAcademico] = React.useState(false);
+    const [cambioDeResidencia, setCambioDeResidencia] = React.useState(false);
+    const [si, setSi] = React.useState(false);
+    const [no, setNo] = React.useState(false);
+    const [ustedEstaMasSatisfechoQueSuPareja, setUstedEstaMasSatisfechoQueSuPareja] = React.useState(false);
+    const [ambosEstanIgualDeSatisfechos, setAmbosEstanIgualDeSatisfechos] = React.useState(false);
+    const [suParejaEstaMasSatisfechaQueUsted, setSuParejaEstaMasSatisfechaQueUsted] = React.useState(false);
+    const [problemasConcentracion, setProblemasConcentracion] = React.useState(false);
+    const [angustia, setAngustia] = React.useState(false);
+    const [problemasMemoria, setProblemasMemoria] = React.useState(false);
+    const [insomnio, setInsomnio] = React.useState(false);
+    const [excesoSueño, setExcesoSueño] = React.useState(false);
+    const [pesadillas, setPesadillas] = React.useState(false);
+    const [sonambulismo, setSonambulismo] = React.useState(false);
+    const [aburrimiento, setAburrimiento] = React.useState(false);
+    const [irritabilidad, setIrritabilidad] = React.useState(false);
+    const [mareos, setMareos] = React.useState(false);
+    const [cefaleas, setCefaleas] = React.useState(false);
+    const [vomitos, setVomitos] = React.useState(false);
+    const [desmayos, setDesmayos] = React.useState(false);
+    const [diarreas, setDiarreas] = React.useState(false);
+    const [constipacion, setConstipacion] = React.useState(false);
+    const [arritmia, setArritmia] = React.useState(false);
+    const [transpiracionManos, setTranspiracionManos] = React.useState(false);
+    const [onicofagia, setOnicofagia] = React.useState(false);
+    const [temblorManos, setTemblorManos] = React.useState(false);
+    const [bruxismo, setBruxismo] = React.useState(false);
+    const [comeExceso, setComeExceso] = React.useState(false);
+    const [inapetencia, setInapetencia] = React.useState(false);
+    const [sequedadBucal, setSequedadBucal] = React.useState(false);
+    const [ideasObsesivas, setIdeasObsesivas] = React.useState(false);
+    const [ideasSuicidio, setIdeasSuicidio] = React.useState(false);
+    const [sentimientosCulpa, set] = React.useState(false);
+    const [tartamudez, setTartamudez] = React.useState(false);
+    const [alteracionesMenstruales, setAlteracionesMenstruales] = React.useState(false);
+    const [impotenciaSecual, setImpotenciaSecual] = React.useState(false);
+    const [frigidez, setFrigidez] = React.useState(false);
+    const [eyaculacionprecoz, setEyaculacionprecoz] = React.useState(false);
+    const [dolorVaginal, setDolorVaginal] = React.useState(false);
+    const [pocoDeseo, setPocoDeseo] = React.useState(false);
+    const [tics, setTics] = React.useState(false);
+    const [fatiga, setFatiga] = React.useState(false);
+    const [llanto, setLlanto] = React.useState(false);
+    const [desanimo, setDesanimo] = React.useState(false);
+    const [pena, setPena] = React.useState(false);
+    const [ingestion, setIngestion] = React.useState(false);
+    const [consumos, setConsumos] = React.useState(false);
+    const [hipocondria, setHipocondria] = React.useState(false);
+    const [alturas, setAlturas] = React.useState(false);
+    const [espacios, setEspacios] = React.useState(false);
+    const [viajar, setViajar] = React.useState(false);
+    const [sangre, setSangre] = React.useState(false);
+    const [espaciosAbiertos, setEspaciosAbiertos] = React.useState(false);
+    const [, set] = React.useState(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const [banderaAlerta, setBanderaAlerta] = useStaconst [andar, setAndar] = React.useState(false);te(false);
     const [banderaAlertaOpcion, setBanderaAlertaOpcion] = useState(false);
 
 
@@ -235,14 +339,15 @@ export default function PsicologoF() {
             hablar: hablar,
             leerYEscribir: leerYEscribir,
             controlarEsfinter: controlarEsfinter,
-            conducual: conductual,
+            conductual: conductual,
             otros: otros,
             muySatisfecho: muySatisfecho,
             satisfecho: satisfecho,
-            relativamenteSatisfecho: relativamenteSAtisfecho,
+            relativamenteSatisfecho: relativamenteSatisfecho,
             insatisfecho: insatisfecho,
             muyInsatisfecho: muyInsatisfecho,
-            sociable: relativamenteSociable,
+            sociable: sociable,
+            relativamenteSociable: relativamenteSociable,
             pocoSociable: pocoSociable,
             plenamenteSatisfecho: plenamenteSatisfecho,
             satisfecho2: satisfecho2,
@@ -275,7 +380,7 @@ export default function PsicologoF() {
             pesadillas:pesadillas,
             sonambulismo:sonambulismo,
             aburrimiento:aburrimiento,
-            irratibilidad:irratibilidad,
+            irritabilidad:irritabilidad,
             mareos:mareos,
             cefaleas:cefaleas,
             vomitos:vomitos,
@@ -287,12 +392,12 @@ export default function PsicologoF() {
             onicofagia:onicofagia,
             temblorManos:temblorManos,
             bruxismo:bruxismo,
-            comeexceso:comeexceso,
+            comeExceso:comeExceso,
             inapetencia:inapetencia,
             sequedadBucal:sequedadBucal,
             ideasObsesivas:ideasObsesivas,
             ideasSuicidio:ideasSuicidio,
-            sentimientosCupla:sentimientosCulpa,
+            sentimientosCulpa:sentimientosCulpa,
             tartamudez:tartamudez,
             alteracionesMenstruales:alteracionesMenstruales,
             impotenciaSecual:impotenciaSecual,
@@ -312,7 +417,7 @@ export default function PsicologoF() {
             espacios:espacios,
             viajar:viajar,
             sangre:sangre,
-            espaciosAbiertos
+            espaciosAbiertos:espaciosAbiertos
 
             
 
@@ -613,7 +718,7 @@ export default function PsicologoF() {
                             value={antecedenteDesarrollo} onChange={(e) => { setAntecedenteDesarrollo(e.target.value) }}
                         />
                         <Typography variant="h7" gutterBottom>
-                            Dificultades para aprener a:
+                            Dificultades para aprender a:
                     </Typography>
                     </Grid>
                     <Grid item className={classes.container3} >
