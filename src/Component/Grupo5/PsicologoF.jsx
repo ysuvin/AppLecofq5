@@ -525,7 +525,7 @@ export default function PsicologoF() {
                             value={antecedenteDesarrollo} onChange={(e) => { setAntecedenteDesarrollo(e.target.value) }}
                         />
                         <Typography variant="h7" gutterBottom>
-                            Dificultades para aprener a:
+                            Dificultades para aprender a:
                     </Typography>
                     </Grid>
                     <Grid item className={classes.container3} >
